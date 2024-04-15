@@ -1,0 +1,8 @@
+ <item
+        android:id="@+id/menu_search"
+        android:title="@string/menu_search"/>
+    <item
+        android:id="@+id/menu_tengwang"
+        android:title="@string/menu_tengwang"/>
+
+</menu>
