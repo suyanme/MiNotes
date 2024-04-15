@@ -1,2 +1,1 @@
 #MiNotes
-eatshit fuck
