@@ -1,0 +1,45 @@
+app/src/main/java/net/micode/notes/ui/NotesListActivity.java
+
+@@ -80,7 +80,8 @@
+
+public class NotesListActivity extends Activity implements OnClickListener, OnItemLongClickListener {
+    private static final int FOLDER_NOTE_LIST_QUERY_TOKEN = 0;
+
+    //首页背景切换
+    private int backgroundmode = -1;
+    private static final int FOLDER_LIST_QUERY_TOKEN      = 1;
+
+    private static final int MENU_FOLDER_DELETE = 0;
+@@ -136,10 +137,14 @@ private enum ListEditState {
+    private final static int REQUEST_CODE_OPEN_NODE = 102;
+    private final static int REQUEST_CODE_NEW_NODE  = 103;
+
+//    @override注解在Java中的作用是指示某个子类的方法是从父类或接口继承过来的，用以覆盖（重写）父类中的方法。
+//    使用@override可以帮助开发者及早发现代码中可能存在的问题，并且可以提高代码的可读性。
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.note_list);
+        getWindow().setBackgroundDrawableResource(R.drawable.tengwang);
+        initResources();
+
+        /**
+@@ -803,6 +808,7 @@ public void onClick(DialogInterface dialog, int which) {
+        return true;
+    }
+
+
+    @Override
+    public boolean onPrepareOptionsMenu(Menu menu) {
+        menu.clear();
+@@ -855,6 +861,9 @@ else if (item.getItemId() == R.id.menu_new_note) {
+            else if(item.getItemId() == R.id.menu_search) {
+                onSearchRequested();
+//                break;
+            }else if(item.getItemId() == R.id.menu_tengwang){
+                backgroundmode = 0;
+                getWindow().setBackgroundDrawableResource(R.drawable.tengwang);
+            }
+
+//                break;
